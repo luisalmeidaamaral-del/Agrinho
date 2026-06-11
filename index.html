@@ -1,31 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrinho 2026 - Agro Forte, Futuro Sustentável</title>
+    <title>Agro Sustentável - Futuro do Campo</title>
+    <!-- Font Awesome para ícones agrícolas [1, 5] -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header>
-        <h1>Agro Forte, Futuro Sustentável</h1>
-        <p>O equilíbrio entre a produção e o meio ambiente</p>
+    <header id="header">
+        <nav id="navbar">
+            <i class="fa-solid fa-leaf" id="nav_logo"> AGRO<span>FORTE</span></i>
+            <ul id="nav_list">
+                <li class="nav-item active"><a href="#home">Início</a></li>
+                <li class="nav-item"><a href="#services">Tecnologia</a></li>
+                <li class="nav-item"><a href="#data">Produção</a></li>
+            </ul>
+            <button class="btn-default">Fale Conosco</button>
+            <button id="mobile_btn"><i class="fa-solid fa-bars"></i></button>
+        </nav>
     </header>
 
-    <main class="container">
-        <section id="conteudo">
-            <h2>Soluções para o Campo</h2>
-            <p>Clique no botão para descobrir uma prática sustentável para o manejo agrícola.</p>
-            <button id="btnDica">Descobrir Prática</button>
-            <p id="exibirDica"></p>
+    <main id="content">
+        <!-- Seção Hero/CTA baseada na fonte [6, 7] -->
+        <section id="home">
+            <div id="cta">
+                <h1 class="title">Agro forte, futuro <span>sustentável</span>.</h1>
+                <p class="description">
+                    Equilíbrio entre alta produtividade e respeito ao meio ambiente para garantir a segurança alimentar [8, 9].
+                </p>
+                <div id="cta_buttons">
+                    <a href="#" class="btn-default">Ver Soluções</a>
+                    <a href="tel:+5500000000" id="phone_button">
+                        <button class="btn-default"><i class="fa-solid fa-phone"></i> (65) 99964-2022</button>
+                    </a>
+                </div>
+            </div>
+            <div id="banner">
+                <!-- Ilustração estratégica para conexão com o campo [10, 11] -->
+                <img src="img/agro-hero.png" alt="Tecnologia no Campo">
+            </div>
+        </section>
+
+        <!-- Seção de Dados com Chart.js [12, 13] -->
+        <section id="data">
+            <h2 class="section-title">Dados de Sustentabilidade</h2>
+            <canvas id="myChart" width="400" height="200"></canvas>
         </section>
     </main>
 
-    <footer>
-        <p>Projeto desenvolvido para o Concurso Agrinho 2026</p>
-    </footer>
-
+    <!-- Scripts: jQuery, ScrollReveal e Chart.js [13-15] -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
