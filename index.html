@@ -1,100 +1,270 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroVanguard Pro - Inteligência no Campo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Agro Forte | Futuro Sustentável · Agrinho 2026</title>
     
-    <!-- Tipografia de Impacto: League Gothic para títulos e Poppins para leitura [1, 2] -->
-    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar com Efeito de Sombra no Scroll [3, 4] -->
-    <header id="header">
-        <nav id="navbar">
+
+    <!-- CABEÇALHO / NAVEGAÇÃO PRINCIPAL -->
+    <header class="header" id="header">
+        <div class="container header-container">
             <div class="logo">
-                <i class="fa-solid fa-microchip"></i> AGRO<span>VANGUARD</span>
+                <i class="fas fa-leaf logo-icon"></i>
+                <span class="logo-text">Agro<span class="logo-highlight">Forte</span></span>
+                <span class="logo-sustentavel">Sustentável</span>
             </div>
-            <ul id="nav_list">
-                <li><a href="#home" class="active">Ecossistema</a></li>
-                <li><a href="#tech-tabs">Soluções</a></li>
-                <li><a href="#dashboard">Indicadores</a></li>
-                <li><a href="#contact">Conectar</a></li>
-            </ul>
-            <button class="btn-main">Acessar Terminal</button>
-            <div id="mobile_btn"><i class="fa-solid fa-bars"></i></div>
-        </nav>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link">Início</a></li>
+                    <li><a href="#equilibrio" class="nav-link">Equilíbrio</a></li>
+                    <li><a href="#praticas" class="nav-link">Práticas</a></li>
+                    <li><a href="#detalhes-praticas" class="nav-link">Tecnologias</a></li>
+                    <li><a href="#impacto" class="nav-link">Impacto</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main id="main-content">
-        <!-- Seção Hero: Animações Complexas com GSAP [5] -->
-        <section id="home" class="hero-section">
-            <div class="hero-container">
-                <div class="hero-text">
-                    <h1 class="gsap-reveal">REVOLUÇÃO <span>VERDE</span> ATRAVÉS DO DADO</h1>
-                    <p class="gsap-fade">Implementamos camadas de inteligência artificial em cada hectare, garantindo produtividade máxima com impacto ambiental mínimo.</p>
-                    <div class="hero-actions">
-                        <button class="btn-primary">Explorar Ecossistema</button>
-                        <a href="#dashboard" class="btn-link">Ver Dados em Tempo Real <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
+    <main>
+        <!-- SEÇÃO HERO - INÍCIO -->
+        <section id="inicio" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <span class="hero-tag">Agrinho 2026</span>
+                <h1 class="hero-title">Agro forte, <br> futuro <span class="gradient-text">sustentável</span></h1>
+                <p class="hero-description">
+                    Produzir com responsabilidade é cultivar amanhã. O equilíbrio entre produtividade 
+                    e preservação ambiental é o caminho para alimentar o mundo sem esgotar a terra.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#praticas" class="btn btn-primary btn-icon">Explorar soluções <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contato" class="btn btn-outline-light">Junte-se a nós <i class="fas fa-seedling"></i></a>
                 </div>
-                <div class="hero-visual">
-                    <div class="blob-animation"></div>
-                    <img src="img/tractor-future.png" alt="Automação Rural" class="floating-img">
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">+40%</span>
+                        <span class="stat-label">eficiência hídrica</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">25M</span>
+                        <span class="stat-label">hectares preservados</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">-32%</span>
+                        <span class="stat-label">emissões carbono</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Navegação por Abas Interativas (Tech Selector) [6, 7] -->
-        <section id="tech-tabs" class="tabs-section">
-            <h2 class="section-title">Tecnologia de Precisão</h2>
-            <div class="tab-container">
-                <div class="tab-buttons">
-                    <button class="tab-btn active" data-target="drones">Monitoramento</button>
-                    <button class="tab-btn" data-target="iot">Sensores IoT</button>
-                    <button class="tab-btn" data-target="ia">IA Preditiva</button>
+        <!-- SEÇÃO EQUILÍBRIO -->
+        <section id="equilibrio" class="equilibrio">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Produção + Planeta</span>
+                    <h2 class="section-title">Harmonia entre colheita e conservação</h2>
+                    <p class="section-subtitle">O agro brasileiro prova que é possível aumentar a produtividade e, ao mesmo tempo, regenerar os recursos naturais.</p>
                 </div>
-                <div class="tab-content show" id="drones">
-                    <div class="tab-grid">
-                        <img src="img/drone-view.jpg" alt="Drones">
-                        <div class="text">
-                            <h3>Vigilância Multiespectral</h3>
-                            <p>Drones equipados com sensores térmicos e infravermelhos para detecção precoce de pragas [8].</p>
+                <div class="equilibrio-grid">
+                    <div class="equilibrio-card">
+                        <div class="card-icon"><i class="fas fa-tractor"></i></div>
+                        <h3>Agricultura de Baixo Carbono</h3>
+                        <p>Técnicas que reduzem emissões, melhoram o solo e ampliam a resiliência climática nas lavouras.</p>
+                    </div>
+                    <div class="equilibrio-card">
+                        <div class="card-icon"><i class="fas fa-water"></i></div>
+                        <h3>Uso consciente da água</h3>
+                        <p>Irrigação por gotejamento, reuso e captação de chuva garantem água para as próximas gerações.</p>
+                    </div>
+                    <div class="equilibrio-card">
+                        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Produtividade sustentável</h3>
+                        <p>Tecnologias que integram produtividade ecológica e rentabilidade no campo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO PRÁTICAS SUSTENTÁVEIS -->
+        <section id="praticas" class="praticas">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Soluções que regeneram</span>
+                    <h2 class="section-title">Práticas sustentáveis em ação</h2>
+                    <p class="section-subtitle">Conheça métodos que integram tecnologia, tradição e respeito ao meio ambiente.</p>
+                </div>
+                <div class="cards-grid">
+                    <div class="pratica-card">
+                        <div class="card-img"><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&auto=format" alt="ILPF" loading="lazy"></div>
+                        <div class="card-content">
+                            <h3>ILPF</h3>
+                            <p>Integração Lavoura-Pecuária-Floresta: sistema que recupera pastagens, sequestra carbono e diversifica renda.</p>
+                            <a href="#detalhe-ilpf" class="btn-card-detail">Ver detalhes <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="pratica-card">
+                        <div class="card-img"><img src="https://images.unsplash.com/photo-1530653032006-6fc689ec17c5?w=600&auto=format" alt="Agricultura de precisão" loading="lazy"></div>
+                        <div class="card-content">
+                            <h3>Agricultura de Precisão</h3>
+                            <p>Drones, sensores e big data otimizam insumos, reduzindo desperdícios e protegendo o solo e a água.</p>
+                            <a href="#detalhe-precisao" class="btn-card-detail">Ver detalhes <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="pratica-card">
+                        <div class="card-img"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&auto=format" alt="Energia renovável" loading="lazy"></div>
+                        <div class="card-content">
+                            <h3>Energia Limpa no Agro</h3>
+                            <p>Biogás, energia solar e biomassa transformam resíduos em eletricidade e reduzem pegada de carbono.</p>
+                            <a href="#detalhe-energia" class="btn-card-detail">Ver detalhes <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="pratica-card">
+                        <div class="card-img"><img src="https://images.unsplash.com/photo-1589923188659-9e548e5c83e9?w=600&auto=format" alt="Restauração de nascentes" loading="lazy"></div>
+                        <div class="card-content">
+                            <h3>Restauração de Nascentes</h3>
+                            <p>Recuperação de matas ciliares e proteção de mananciais, garantindo água de qualidade para a produção.</p>
+                            <a href="#detalhe-nascentes" class="btn-card-detail">Ver detalhes <i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <!-- Outros conteúdos de abas... -->
             </div>
         </section>
 
-        <!-- Dashboard Interativo com Chart.js [9, 10] -->
-        <section id="dashboard" class="dashboard-section">
-            <div class="dashboard-header">
-                <h2>Indicadores de Sustentabilidade 2026</h2>
-                <p>O equilíbrio entre produção e meio ambiente [11, 12].</p>
+        <!-- SEÇÃO DETALHES DAS PRÁTICAS -->
+        <section id="detalhes-praticas" class="detalhes-praticas">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Tecnologias que transformam o campo</h2>
+                    <p class="section-subtitle">Clique nos botões dos cards ou explore abaixo cada iniciativa sustentável</p>
+                </div>
+                <div class="detalhes-wrapper">
+                    <div id="detalhe-ilpf" class="detalhe-item">
+                        <i class="fas fa-tree detalhe-icon"></i>
+                        <h3>ILPF: aliada da neutralidade climática</h3>
+                        <p>O sistema Integração Lavoura-Pecuária-Floresta recupera áreas degradadas, aumenta a matéria orgânica do solo e reduz a necessidade de desmatamento. Estudos da Embrapa mostram que a ILPF pode sequestrar até 10 toneladas de CO₂ por hectare/ano, gerando créditos de carbono e fortalecendo a economia verde.</p>
+                        <a href="#praticas" class="back-link"><i class="fas fa-arrow-left"></i> Voltar para práticas</a>
+                    </div>
+                    <div id="detalhe-precisao" class="detalhe-item">
+                        <i class="fas fa-microchip detalhe-icon"></i>
+                        <h3>Agricultura de precisão 4.0</h3>
+                        <p>Sensores IoT, imagens de satélite e pulverização localizada reduzem o uso de fertilizantes e defensivos em até 35%. A aplicação inteligente evita contaminação de aquíferos e preserva a biodiversidade, mantendo a alta produtividade com menos impacto ambiental.</p>
+                        <a href="#praticas" class="back-link"><i class="fas fa-arrow-left"></i> Voltar para práticas</a>
+                    </div>
+                    <div id="detalhe-energia" class="detalhe-item">
+                        <i class="fas fa-solar-panel detalhe-icon"></i>
+                        <h3>Bioenergia e autonomia rural</h3>
+                        <p>Com biodigestores, os resíduos da pecuária e da agroindústria geram biogás que alimenta geradores, tratores e cozinhas. Propriedades rurais reduzem custos com energia e diminuem a emissão de metano, tornando o agro cada vez mais circular e independente.</p>
+                        <a href="#praticas" class="back-link"><i class="fas fa-arrow-left"></i> Voltar para práticas</a>
+                    </div>
+                    <div id="detalhe-nascentes" class="detalhe-item">
+                        <i class="fas fa-droplet detalhe-icon"></i>
+                        <h3>Água como pilar da produção</h3>
+                        <p>A recuperação de nascentes e o plantio de espécies nativas em APP's garantem a recarga hídrica e a perenidade dos rios. Sistemas agroflorestais protegem os recursos hídricos e ainda oferecem frutos, madeira e renda extra ao agricultor familiar.</p>
+                        <a href="#praticas" class="back-link"><i class="fas fa-arrow-left"></i> Voltar para práticas</a>
+                    </div>
+                </div>
             </div>
-            <div class="chart-wrapper">
-                <canvas id="mainAgroChart"></canvas>
+        </section>
+
+        <!-- SEÇÃO IMPACTO NÚMEROS -->
+        <section id="impacto" class="impacto">
+            <div class="container">
+                <div class="section-header light">
+                    <span class="section-badge dark-badge">Números que inspiram</span>
+                    <h2 class="section-title">Resultados reais para o futuro</h2>
+                    <p class="section-subtitle">O equilíbrio entre produção e meio ambiente já é realidade no campo brasileiro.</p>
+                </div>
+                <div class="impacto-stats">
+                    <div class="impacto-card">
+                        <div class="counter" data-target="78">0</div>
+                        <span class="counter-desc">milhões de toneladas de grãos com baixo carbono</span>
+                    </div>
+                    <div class="impacto-card">
+                        <div class="counter" data-target="15">0</div>
+                        <span class="counter-desc">milhões de hectares integrados (ILPF)</span>
+                    </div>
+                    <div class="impacto-card">
+                        <div class="counter" data-target="43">0</div>
+                        <span class="counter-desc">% de energia renovável no agro</span>
+                    </div>
+                    <div class="impacto-card">
+                        <div class="counter" data-target="2.4">0</div>
+                        <span class="counter-desc">bilhões de árvores preservadas em RPPNs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO CONTATO -->
+        <section id="contato" class="contato">
+            <div class="container contato-container">
+                <div class="contato-info">
+                    <h2><i class="fas fa-hand-peace"></i> Faça parte do movimento</h2>
+                    <p>Produtor rural, estudante ou entusiasta: o futuro sustentável se constrói em rede. Compartilhe suas ideias e boas práticas para o Agrinho 2026.</p>
+                    <div class="contato-details">
+                        <div><i class="fas fa-envelope"></i> agroforte@sustentavel.org</div>
+                        <div><i class="fas fa-phone-alt"></i> (47) 3225-8800</div>
+                        <div><i class="fab fa-whatsapp"></i> (47) 9 8800-1234</div>
+                    </div>
+                </div>
+                <div class="contato-form">
+                    <form id="formContato" action="#" method="post">
+                        <input type="text" placeholder="Seu nome" required>
+                        <input type="email" placeholder="E-mail" required>
+                        <textarea rows="4" placeholder="Sua mensagem ou proposta para o agro sustentável..."></textarea>
+                        <button type="submit" class="btn btn-primary full-width">Enviar mensagem <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer Moderno com Wave SVG [13] -->
-    <footer class="footer-wave">
-        <div class="wave-svg">
-            <svg viewBox="0 0 1440 120"><path fill="#2d5a27" d="M0,32L60,42.7C120,53,240,75,360,74.7C480,75,600,53,720,48C840,43,960,53,1080,53.3C1200,53,1320,43,1380,37.3L1440,32L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z"></path></svg>
-        </div>
-        <div class="footer-content">
-            <p>&copy; 2026 AgroVanguard. Todos os direitos reservados. [14]</p>
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo logo-footer">
+                    <i class="fas fa-leaf"></i> AgroForte Sustentável
+                </div>
+                <p>Cultivando o amanhã com respeito à terra, água e biodiversidade. #Agrinho2026</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#equilibrio">Equilíbrio</a></li>
+                    <li><a href="#praticas">Práticas</a></li>
+                    <li><a href="#impacto">Impacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-cta">
+                <h4>Inspire-se</h4>
+                <a href="#praticas" class="btn-outline-footer">Explorar soluções verdes <i class="fas fa-seedling"></i></a>
+                <p class="footer-copy">© 2026 · Projeto Agrinho – Agro forte, futuro sustentável</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Bibliotecas Necessárias -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
     <script src="script.js"></script>
 </body>
 </html>
