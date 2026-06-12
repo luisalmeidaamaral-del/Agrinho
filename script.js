@@ -1,56 +1,149 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. GSAP: Animação de Entrada de Alto Nível [5]
-    const tl = gsap.timeline();
-    tl.from(".gsap-reveal", { duration: 1.2, y: 50, opacity: 0, ease: "power4.out" })
-      .from(".gsap-fade", { duration: 0.8, opacity: 0 }, "-=0.4")
-      .from(".hero-visual", { duration: 1, scale: 0.9, opacity: 0 }, "-=0.6");
+// ========== MENU MOBILE ==========
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
 
-    // 2. Navbar Dinâmica (Sombra ao Scrolar) [4, 26-29]
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        header.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // 3. Sistema de Abas Funcional [30-34]
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const contents = document.querySelectorAll('.tab-content');
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const target = btn.getAttribute('data-target');
-            
-            // Troca botão ativo
-            tabBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            // Troca conteúdo
-            contents.forEach(c => c.classList.remove('show'));
-            document.getElementById(target).classList.add('show');
-        });
-    });
-
-    // 4. Gráfico Complexo: Chart.js [10, 35]
-    const ctx = document.getElementById('mainAgroChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
-            datasets: [{
-                label: 'Eficiência de Bioinsumos (%)',
-                data: [5, 36-40],
-                borderColor: '#2d5a27',
-                backgroundColor: 'rgba(45, 90, 39, 0.2)',
-                fill: true,
-                tension: 0.4
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: { legend: { labels: { color: 'white' } } },
-            scales: { y: { ticks: { color: 'white' } }, x: { ticks: { color: 'white' } } }
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        const icon = menuToggle.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
         }
     });
 
-    // 5. ScrollReveal: Revelação Sequencial [41]
-    ScrollReveal().reveal('.tab-container', { delay: 300, distance: '50px', origin: 'bottom' });
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
+}
+
+// ========== SCROLL SUAVE + DESTAQUE NO MENU ==========
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function changeActiveLink() {
+    let current = '';
+    const scrollPos = window.scrollY + 150;
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active-link');
+        const href = link.getAttribute('href').substring(1);
+        if (href === current) {
+            link.classList.add('active-link');
+            link.style.borderBottom = '2px solid var(--secondary)';
+        } else {
+            link.style.borderBottom = 'none';
+        }
+    });
+}
+
+window.addEventListener('scroll', changeActiveLink);
+window.addEventListener('load', changeActiveLink);
+
+// ========== CONTADOR DE NÚMEROS (ANIMADO) ==========
+const counters = document.querySelectorAll('.counter');
+let started = false;
+
+function startCounters() {
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = parseFloat(counter.getAttribute('data-target'));
+            let current = parseFloat(counter.innerText);
+            const increment = target / 65;
+            if (current < target) {
+                let newValue = current + increment;
+                if (newValue > target) newValue = target;
+                counter.innerText = Math.floor(newValue);
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        updateCount();
+    });
+}
+
+function isImpactSectionVisible() {
+    const impactSection = document.getElementById('impacto');
+    if (!impactSection) return false;
+    const rect = impactSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    return rect.top <= windowHeight - 100 && rect.bottom >= 100;
+}
+
+window.addEventListener('scroll', () => {
+    if (!started && isImpactSectionVisible()) {
+        started = true;
+        startCounters();
+    }
+    
+    // Botão voltar ao topo
+    const btnTop = document.getElementById('backToTop');
+    if (window.scrollY > 500) {
+        btnTop.style.opacity = '1';
+    } else {
+        btnTop.style.opacity = '0';
+    }
 });
+
+if (isImpactSectionVisible()) {
+    started = true;
+    startCounters();
+}
+
+// ========== BOTÃO VOLTAR AO TOPO ==========
+const topBtn = document.getElementById('backToTop');
+if (topBtn) {
+    topBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// ========== FORMULÁRIO (FEEDBACK) ==========
+const form = document.getElementById('formContato');
+if (form) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('🌱 Obrigado por contribuir com o futuro sustentável! Sua mensagem foi enviada para o movimento Agrinho 2026.');
+        form.reset();
+    });
+}
+
+// ========== BOTÕES DOS CARDS: ROLAGEM SUAVE ATÉ DETALHES ==========
+document.querySelectorAll('.btn-card-detail').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const targetId = btn.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+            e.preventDefault();
+            const element = document.querySelector(targetId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                element.style.transition = '0.3s';
+                element.style.backgroundColor = '#FEF1CF';
+                setTimeout(() => {
+                    element.style.backgroundColor = '';
+                }, 900);
+            }
+        }
+    });
+});
+
+// ========== ESTILO PARA LINK ATIVO ==========
+const styleActive = document.createElement('style');
+styleActive.textContent = `.active-link { color: var(--primary) !important; font-weight: 800; } .nav-link.active-link { border-bottom: 2px solid var(--secondary); }`;
+document.head.appendChild(styleActive);
