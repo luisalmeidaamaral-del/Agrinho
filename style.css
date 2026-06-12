@@ -425,22 +425,6 @@ body {
     transform: translateY(0);
 }
 
-.cta {
-    background: #eef5e8;
-    text-align: center;
-    padding: 70px 0;
-}
-
-.cta-content i {
-    color: #4caf50;
-    margin-bottom: 16px;
-}
-
-.cta-content h3 {
-    font-size: 2rem;
-    margin-bottom: 16px;
-}
-
 .footer {
     background: #0f2a0f;
     color: #cfe9cf;
