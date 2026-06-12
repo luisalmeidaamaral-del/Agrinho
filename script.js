@@ -164,14 +164,6 @@ window.addEventListener('scroll', () => {
 window.addEventListener('load', () => {
     updateActiveLink();
     animateNumbers();
-    
-    const ctaBtn = document.getElementById('ctaButton');
-    if (ctaBtn) {
-        ctaBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('🌱 Obrigado pelo interesse! Juntos construímos um agro forte e sustentável. Participe do Agrinho 2026!');
-        });
-    }
 });
 
 const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
