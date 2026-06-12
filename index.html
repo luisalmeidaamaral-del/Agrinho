@@ -3,156 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrinho 2026 | Agro Forte, Futuro Sustentável</title>
+    <title>Agrinho 2026 - Agro Forte, Futuro Sustentável</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Header / Navegação -->
     <header>
-        <div class="container header-container">
-            <div class="logo">
-                <i class="fas fa-leaf"></i>
-                <span>Agrinho 2026</span>
-            </div>
-            <nav>
-                <ul>
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+                    <span class="logo-icon">🌱</span>
+                    <span class="logo-text">Agrinho 2026</span>
+                </div>
+                <ul class="nav-links">
                     <li><a href="#home">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#conceito">Conceito</a></li>
                     <li><a href="#praticas">Práticas</a></li>
-                    <li><a href="#impacto">Impacto</a></li>
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#destaques">Destaques</a></li>
                 </ul>
-            </nav>
-        </div>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-overlay"></div>
-            <div class="container hero-content">
-                <h1>Agro forte, <span class="highlight">futuro sustentável</span></h1>
-                <p>Equilíbrio entre produção agrícola e preservação ambiental para as próximas gerações.</p>
+    <!-- Seção Hero -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">Agrinho 2026</span>
+                <h1>Agro Forte,<br><span class="highlight">Futuro Sustentável</span></h1>
+                <p>Equilíbrio entre produção agrícola e preservação ambiental. Cultivando o amanhã com responsabilidade e inovação.</p>
                 <div class="hero-buttons">
-                    <a href="#praticas" class="btn-primary">Explorar soluções</a>
-                    <a href="#sobre" class="btn-outline">Saiba mais</a>
+                    <a href="#conceito" class="btn-primary">Descubra Mais</a>
+                    <a href="#praticas" class="btn-secondary">Ver Práticas</a>
                 </div>
             </div>
-        </section>
-
-        <section id="sobre" class="sobre">
-            <div class="container">
-                <div class="sobre-grid">
-                    <div class="sobre-texto">
-                        <span class="tag">NOSSO PROPÓSITO</span>
-                        <h2>Produzir mais, cuidando do planeta</h2>
-                        <p>No Agrinho 2026, acreditamos que é possível aumentar a produtividade no campo sem comprometer os recursos naturais. Tecnologia, inovação e respeito à terra caminham juntos.</p>
-                        <div class="destaques">
-                            <div class="destaque-item">
-                                <i class="fas fa-tractor"></i>
-                                <div>
-                                    <h4>+40% de eficiência</h4>
-                                    <p>Com técnicas regenerativas</p>
-                                </div>
-                            </div>
-                            <div class="destaque-item">
-                                <i class="fas fa-water"></i>
-                                <div>
-                                    <h4>30% menos água</h4>
-                                    <p>Irrigação inteligente</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sobre-imagem">
-                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&h=500&fit=crop" alt="Campo sustentável">
-                    </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="40">0</span>
+                    <span class="stat-label">% menos impacto ambiental</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="30">0</span>
+                    <span class="stat-label">% mais produtividade</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="praticas" class="praticas">
-            <div class="container">
-                <div class="section-header">
-                    <span class="tag">SOLUÇÕES QUE FUNCIONAM</span>
-                    <h2>Práticas sustentáveis no agro</h2>
-                    <p>Conheça técnicas que unem alta produtividade e conservação ambiental</p>
+    <!-- Seção Conceito -->
+    <section id="conceito" class="conceito">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">O Conceito</span>
+                <h2>Equilíbrio que Transforma</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Produzir mais, preservando melhor. Este é o pilar do agro sustentável para 2026 e além.</p>
+            </div>
+            <div class="conceito-grid">
+                <div class="conceito-card">
+                    <div class="card-icon">🌾</div>
+                    <h3>Produção Inteligente</h3>
+                    <p>Tecnologias que aumentam a eficiência sem expandir fronteiras agrícolas, respeitando os limites do planeta.</p>
                 </div>
-                <div class="cards-grid">
-                    <div class="card">
-                        <div class="card-icon"><i class="fas fa-seedling"></i></div>
-                        <h3>Plantio Direto</h3>
-                        <p>Conservação do solo, redução da erosão e aumento da matéria orgânica.</p>
+                <div class="conceito-card">
+                    <div class="card-icon">💧</div>
+                    <h3>Uso Consciente da Água</h3>
+                    <p>Sistemas de irrigação precisos e captação de água da chuva para reduzir o consumo em até 50%.</p>
+                </div>
+                <div class="conceito-card">
+                    <div class="card-icon">🌳</div>
+                    <h3>Preservação Ativa</h3>
+                    <p>Integração lavoura-pecuária-floresta e recuperação de áreas degradadas como prática padrão.</p>
+                </div>
+                <div class="conceito-card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Energia Limpa no Campo</h3>
+                    <p>Uso de biogás, solar e eólica para tornar as operações agrícolas carbono neutro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Práticas Sustentáveis -->
+    <section id="praticas" class="praticas">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Na Prática</span>
+                <h2>Práticas que Sustentam o Futuro</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Conheça as técnicas que unem alta produtividade e respeito ao meio ambiente.</p>
+            </div>
+            <div class="praticas-grid">
+                <div class="pratica-item">
+                    <div class="pratica-number">01</div>
+                    <div class="pratica-content">
+                        <h3>Plantio Direto na Palha</h3>
+                        <p>Mantém a cobertura do solo, reduz erosão, aumenta matéria orgânica e captura carbono.</p>
                     </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="fas fa-solar-panel"></i></div>
-                        <h3>Energia Limpa</h3>
-                        <p>Uso de biogás e energia solar nas propriedades rurais.</p>
+                </div>
+                <div class="pratica-item">
+                    <div class="pratica-number">02</div>
+                    <div class="pratica-content">
+                        <h3>Rotação de Culturas</h3>
+                        <p>Quebra ciclos de pragas, melhora a fertilidade natural e diversifica a produção.</p>
                     </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="fas fa-charging-station"></i></div>
+                </div>
+                <div class="pratica-item">
+                    <div class="pratica-number">03</div>
+                    <div class="pratica-content">
+                        <h3>Biodigestores</h3>
+                        <p>Transformam resíduos em biogás e biofertilizante, energia limpa e insumo orgânico.</p>
+                    </div>
+                </div>
+                <div class="pratica-item">
+                    <div class="pratica-number">04</div>
+                    <div class="pratica-content">
                         <h3>Agricultura de Precisão</h3>
-                        <p>Tecnologia para aplicar insumos no local e momento certos.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="fas fa-tree"></i></div>
-                        <h3>Recuperação de APP</h3>
-                        <p>Restauração de matas ciliares e reservas legais.</p>
+                        <p>Uso de drones e sensores para aplicar insumos onde realmente há necessidade.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="impacto" class="impacto">
-            <div class="container">
-                <div class="impacto-content">
-                    <h2>Resultados que inspiram</h2>
-                    <div class="numeros-grid">
-                        <div class="numero-item">
-                            <span class="numero" data-target="85">0</span>
-                            <p>Milhões de toneladas de CO₂ evitadas</p>
-                        </div>
-                        <div class="numero-item">
-                            <span class="numero" data-target="12">0</span>
-                            <p>Milhões de hectares em sistemas sustentáveis</p>
-                        </div>
-                        <div class="numero-item">
-                            <span class="numero" data-target="3.5">0</span>
-                            <p>Milhões de agricultores capacitados</p>
+    <!-- Seção Benefícios -->
+    <section id="beneficios" class="beneficios">
+        <div class="container">
+            <div class="beneficios-wrapper">
+                <div class="beneficios-text">
+                    <span class="section-tag">Vantagens</span>
+                    <h2>Por que apostar no agro sustentável?</h2>
+                    <div class="section-divider-left"></div>
+                    <ul class="beneficios-list">
+                        <li>
+                            <span class="check">✓</span>
+                            <span><strong>Maior rentabilidade</strong> a longo prazo com solos preservados</span>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <span><strong>Acesso a mercados exigentes</strong> que valorizam certificações verdes</span>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <span><strong>Resiliência climática</strong> contra secas e eventos extremos</span>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <span><strong>Qualidade de vida</strong> no campo e redução de custos operacionais</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="beneficios-visual">
+                    <div class="visual-card">
+                        <div class="visual-number" data-value="60">0</div>
+                        <div class="visual-label">Redução de CO₂</div>
+                        <div class="visual-bar">
+                            <div class="visual-fill" style="width: 0%;"></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="inspire-se">
-            <div class="container">
-                <div class="inspire-card">
-                    <i class="fas fa-quote-left"></i>
-                    <h2>Inspire-se</h2>
-                    <p class="citacao">"Produzir alimentos sem destruir o planeta não é um sonho - é o futuro que estamos construindo hoje."</p>
-                    <p class="assinatura">🌾 Agrinho 2026</p>
+    <!-- Seção Destaques / Projetos -->
+    <section id="destaques" class="destaques">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Inspire-se</span>
+                <h2>Casos que mostram o caminho</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Produtores rurais e comunidades que já transformaram sua realidade.</p>
+            </div>
+            <div class="destaques-grid">
+                <div class="destaque-card">
+                    <div class="destaque-icon">🌽</div>
+                    <h3>Fazenda Nova Era</h3>
+                    <p>Aumento de 35% na produtividade do milho com recuperação de pastagens degradadas.</p>
+                </div>
+                <div class="destaque-card">
+                    <div class="destaque-icon">🍊</div>
+                    <h3>Sítio Sustentar</h3>
+                    <p>100% da energia usada na produção de orgânicos vem de painéis solares.</p>
+                </div>
+                <div class="destaque-card">
+                    <div class="destaque-icon">🐄</div>
+                    <h3>Boi Verde</h3>
+                    <p>Sistema silvipastoril reduziu emissões e melhorou o bem-estar animal.</p>
                 </div>
             </div>
-        </section>
-    </main>
+            <div class="citacao">
+                <div class="aspas">"</div>
+                <p class="citacao-texto">Não precisamos escolher entre produzir e preservar. O futuro do agro é a integração harmoniosa entre tecnologia, natureza e responsabilidade social.</p>
+                <p class="citacao-autor">— Movimento Agrinho 2026</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <i class="fas fa-leaf"></i>
+                    <span class="logo-icon">🌱</span>
                     <span>Agrinho 2026</span>
-                    <p>Agro forte, futuro sustentável</p>
+                    <p>Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente.</p>
                 </div>
                 <div class="footer-links">
-                    <a href="#home">Início</a>
-                    <a href="#sobre">Sobre</a>
-                    <a href="#praticas">Práticas</a>
-                    <a href="#impacto">Impacto</a>
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#conceito">Conceito</a></li>
+                        <li><a href="#praticas">Práticas</a></li>
+                        <li><a href="#beneficios">Benefícios</a></li>
+                        <li><a href="#destaques">Destaques</a></li>
+                    </ul>
+                </div>
+                <div class="footer-info">
+                    <h4>Sobre o Projeto</h4>
+                    <p>Agrinho é um programa educativo que incentiva a reflexão sobre temas ambientais e sociais no campo. Edição 2026.</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Agrinho - Projeto Educacional. Todos os direitos reservados.</p>
+                <p>&copy; 2026 Agrinho - Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
