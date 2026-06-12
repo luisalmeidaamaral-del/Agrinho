@@ -1,40 +1,65 @@
-$(document).ready(function() {
-    // Menu Mobile Toggle [29, 30]
-    $('#mobile_btn').on('click', function() {
-        $('#nav_list').toggleClass('active');
-        $(this).find('i').toggleClass('fa-x');
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Animações GSAP (Entrada Suave)
+    gsap.from(".hero-content h1", {
+        duration: 1.5,
+        y: 100,
+        opacity: 0,
+        ease: "power4.out"
     });
 
-    // Animações de Rolagem (ScrollReveal) [15, 31]
+    gsap.from(".hero-visual img", {
+        duration: 2,
+        scale: 0.8,
+        opacity: 0,
+        delay: 0.5,
+        ease: "elastic.out(1, 0.5)"
+    });
+
+    // 2. ScrollReveal para as seções seguintes
     const sr = ScrollReveal({
-        origin: 'left',
-        distance: '20%',
-        duration: 2000,
-        delay: 200
+        origin: 'bottom',
+        distance: '60px',
+        duration: 1000,
+        delay: 200,
+        reset: true
     });
 
-    sr.reveal('#cta');
-    sr.reveal('.section-title', { origin: 'top' });
-    sr.reveal('#myChart', { delay: 400 });
+    sr.reveal('.card', { interval: 200 });
+    sr.reveal('.data-text', { origin: 'left' });
 
-    // Implementação de Gráfico com Chart.js [13, 32]
-    const ctx = document.getElementById('myChart').getContext('2d');
+    // 3. Configuração do Gráfico de Sustentabilidade (Chart.js)
+    const ctx = document.getElementById('sustainabilityChart').getContext('2d');
     new Chart(ctx, {
-        type: 'bar', // Tipo de gráfico: barras [32]
+        type: 'line', 
         data: {
-            labels: ['Reflorestamento', 'Agricultura de Precisão', 'Uso de Bioinsumos'],
+            labels: ['2022', '2023', '2024', '2025', '2026'],
             datasets: [{
-                label: '% de Adoção por Produtores (Exemplo)',
-                data: [33-35],
-                backgroundColor: ['#2d5a27', '#004a8d', '#f9b233'],
-                borderWidth: 1
+                label: 'Redução de Carbono (Ton/Ano)',
+                data: [25-29],
+                borderColor: '#2d5a27',
+                backgroundColor: 'rgba(45, 90, 39, 0.1)',
+                fill: true,
+                tension: 0.4
             }]
         },
         options: {
-            responsive: true, // Responsivo por padrão [36]
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' }
+            },
             scales: {
                 y: { beginAtZero: true }
             }
         }
+    });
+
+    // 4. Menu Mobile
+    const mobileBtn = document.getElementById('mobile_btn');
+    const navList = document.getElementById('nav_list');
+
+    mobileBtn.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        mobileBtn.innerHTML = navList.classList.contains('active') ? 
+            '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
     });
 });
