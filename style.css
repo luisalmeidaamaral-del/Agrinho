@@ -311,18 +311,18 @@ nav a:hover {
     opacity: 0.9;
 }
 
-/* Inspire-se (apenas exemplo - sem coleta de dados) */
+/* Inspire-se - versão sem campo de email */
 .inspire-se {
     padding: 80px 0;
     background: #fef9e6;
 }
 
 .inspire-card {
-    max-width: 550px;
+    max-width: 650px;
     margin: 0 auto;
     text-align: center;
     background: white;
-    padding: 48px 32px;
+    padding: 48px 40px;
     border-radius: 32px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.05);
 }
@@ -330,55 +330,27 @@ nav a:hover {
 .inspire-card i {
     font-size: 3rem;
     color: #f4a261;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .inspire-card h2 {
     font-size: 1.8rem;
-    margin-bottom: 12px;
-}
-
-.inspire-card p {
-    color: #4a5b44;
     margin-bottom: 24px;
+    color: #1a2a1f;
 }
 
-.exemplo-email {
-    background: #f0f2ef;
-    border-radius: 60px;
-    padding: 4px 4px 4px 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.exemplo-email input {
-    background: transparent;
-    border: none;
-    padding: 12px 0;
-    font-family: inherit;
-    font-size: 0.9rem;
+.citacao {
+    font-style: italic;
+    font-size: 1.3rem;
     color: #2d6a4f;
-    width: 200px;
-    outline: none;
+    line-height: 1.4;
+    margin-bottom: 20px;
 }
 
-.exemplo-badge {
-    background: #e0e8df;
-    padding: 6px 16px;
-    border-radius: 40px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #2d6a4f;
-}
-
-.inspire-card small {
-    font-size: 0.7rem;
-    color: #8b9a86;
-    display: block;
+.assinatura {
+    font-size: 1rem;
+    color: #7a8b72;
+    font-weight: 500;
 }
 
 /* Footer */
@@ -417,6 +389,7 @@ footer {
 .footer-links {
     display: flex;
     gap: 32px;
+    flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -426,17 +399,6 @@ footer {
 }
 
 .footer-links a:hover {
-    color: white;
-}
-
-.footer-social i {
-    font-size: 1.5rem;
-    margin-left: 16px;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.footer-social i:hover {
     color: white;
 }
 
@@ -477,7 +439,14 @@ footer {
     }
     
     .footer-links {
-        flex-wrap: wrap;
         justify-content: center;
+    }
+    
+    .citacao {
+        font-size: 1.1rem;
+    }
+    
+    .inspire-card {
+        padding: 32px 24px;
     }
 }
