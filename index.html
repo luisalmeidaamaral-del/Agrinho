@@ -1,99 +1,97 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroVanguard - Inovação e Sustentabilidade</title>
+    <title>AgroVanguard Pro - Inteligência no Campo</title>
     
-    <!-- Fontes e Ícones -->
+    <!-- Tipografia de Impacto: League Gothic para títulos e Poppins para leitura [1, 2] -->
     <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Estilos Customizados -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header com Navegação Preditiva -->
+    <!-- Navbar com Efeito de Sombra no Scroll [3, 4] -->
     <header id="header">
         <nav id="navbar">
             <div class="logo">
-                <i class="fa-solid fa-seedling"></i> AGRO<span>VANGUARD</span>
+                <i class="fa-solid fa-microchip"></i> AGRO<span>VANGUARD</span>
             </div>
             <ul id="nav_list">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#tech">Tecnologia</a></li>
-                <li><a href="#impact">Sustentabilidade</a></li>
-                <li><a href="#data">Dados</a></li>
+                <li><a href="#home" class="active">Ecossistema</a></li>
+                <li><a href="#tech-tabs">Soluções</a></li>
+                <li><a href="#dashboard">Indicadores</a></li>
+                <li><a href="#contact">Conectar</a></li>
             </ul>
-            <button class="btn-cta">Consultoria Digital</button>
+            <button class="btn-main">Acessar Terminal</button>
             <div id="mobile_btn"><i class="fa-solid fa-bars"></i></div>
         </nav>
     </header>
 
-    <main>
-        <!-- Seção Hero: Complexa com Shapes e Animação de Entrada -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 class="reveal">O FUTURO DO CAMPO É <span>DIGITAL</span></h1>
-                <p class="reveal-delay">Liderando a fronteira da agricultura de precisão com inteligência artificial e manejo regenerativo.</p>
-                <div class="hero-buttons">
-                    <button class="btn-primary">Explorar Soluções</button>
-                    <button class="btn-secondary"><i class="fa-solid fa-play"></i> Ver Vídeo</button>
+    <main id="main-content">
+        <!-- Seção Hero: Animações Complexas com GSAP [5] -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1 class="gsap-reveal">REVOLUÇÃO <span>VERDE</span> ATRAVÉS DO DADO</h1>
+                    <p class="gsap-fade">Implementamos camadas de inteligência artificial em cada hectare, garantindo produtividade máxima com impacto ambiental mínimo.</p>
+                    <div class="hero-actions">
+                        <button class="btn-primary">Explorar Ecossistema</button>
+                        <a href="#dashboard" class="btn-link">Ver Dados em Tempo Real <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-visual">
-                <div class="shape-blob"></div>
-                <img src="img/tractor-tech.png" alt="Tecnologia Agrícola" class="floating">
-            </div>
-        </section>
-
-        <!-- Cards de Tecnologia (Complexidade de Layout) -->
-        <section id="tech" class="features">
-            <h2 class="section-title">Tecnologias de Fronteira</h2>
-            <div class="feature-grid">
-                <div class="card">
-                    <i class="fa-solid fa-drone"></i>
-                    <h3>Monitoramento via Drone</h3>
-                    <p>Análise multiespectral para identificação precoce de pragas e estresse hídrico [8, 9].</p>
-                </div>
-                <div class="card active">
-                    <i class="fa-solid fa-microchip"></i>
-                    <h3>Sensores IoT</h3>
-                    <p>Dados de solo em tempo real integrados diretamente ao seu dashboard de gestão [10, 11].</p>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-cloud-sun-rain"></i>
-                    <h3>Previsão Climática IA</h3>
-                    <p>Modelos preditivos de alta precisão para reduzir riscos sazonais [12, 13].</p>
+                <div class="hero-visual">
+                    <div class="blob-animation"></div>
+                    <img src="img/tractor-future.png" alt="Automação Rural" class="floating-img">
                 </div>
             </div>
         </section>
 
-        <!-- Seção de Dados: Data Storytelling com Chart.js -->
-        <section id="data" class="data-section">
-            <div class="data-text">
-                <h2>Impacto Mensurável</h2>
-                <p>Nossos parceiros registraram um aumento médio de **20% na produtividade** e **25% de redução no uso de água** através de sistemas ILPF [14-16].</p>
+        <!-- Navegação por Abas Interativas (Tech Selector) [6, 7] -->
+        <section id="tech-tabs" class="tabs-section">
+            <h2 class="section-title">Tecnologia de Precisão</h2>
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-target="drones">Monitoramento</button>
+                    <button class="tab-btn" data-target="iot">Sensores IoT</button>
+                    <button class="tab-btn" data-target="ia">IA Preditiva</button>
+                </div>
+                <div class="tab-content show" id="drones">
+                    <div class="tab-grid">
+                        <img src="img/drone-view.jpg" alt="Drones">
+                        <div class="text">
+                            <h3>Vigilância Multiespectral</h3>
+                            <p>Drones equipados com sensores térmicos e infravermelhos para detecção precoce de pragas [8].</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Outros conteúdos de abas... -->
             </div>
-            <div class="chart-container">
-                <canvas id="sustainabilityChart"></canvas>
+        </section>
+
+        <!-- Dashboard Interativo com Chart.js [9, 10] -->
+        <section id="dashboard" class="dashboard-section">
+            <div class="dashboard-header">
+                <h2>Indicadores de Sustentabilidade 2026</h2>
+                <p>O equilíbrio entre produção e meio ambiente [11, 12].</p>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="mainAgroChart"></canvas>
             </div>
         </section>
     </main>
 
-    <!-- Footer com Wave SVG Animado -->
-    <footer class="footer">
-        <div class="wave-container">
-            <svg viewBox="0 0 1440 120" class="wave-svg">
-                <path fill="#2d5a27" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-            </svg>
+    <!-- Footer Moderno com Wave SVG [13] -->
+    <footer class="footer-wave">
+        <div class="wave-svg">
+            <svg viewBox="0 0 1440 120"><path fill="#2d5a27" d="M0,32L60,42.7C120,53,240,75,360,74.7C480,75,600,53,720,48C840,43,960,53,1080,53.3C1200,53,1320,43,1380,37.3L1440,32L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z"></path></svg>
         </div>
         <div class="footer-content">
-            <p>&copy; 2026 AgroVanguard - Inovação Sustentável no Campo [17, 18].</p>
+            <p>&copy; 2026 AgroVanguard. Todos os direitos reservados. [14]</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Bibliotecas Necessárias -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
