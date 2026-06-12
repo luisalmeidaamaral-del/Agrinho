@@ -1,6 +1,6 @@
-// Menu Mobile
 const menuToggle = document.getElementById('menu-toggle');
 const navList = document.getElementById('nav-list');
+
 if (menuToggle) {
     menuToggle.addEventListener('click', () => {
         navList.classList.toggle('active');
@@ -13,7 +13,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Animações de contadores
 const statNumbers = document.querySelectorAll('.stat-number');
 let animated = false;
 
@@ -42,7 +41,6 @@ function animateNumbers() {
     }
 }
 
-// Cards de Práticas
 const praticasGrid = document.getElementById('praticas-grid');
 if (praticasGrid) {
     const praticasData = [
@@ -82,7 +80,6 @@ if (praticasGrid) {
     });
 }
 
-// Galeria
 const galeriaGrid = document.querySelector('.galeria-grid');
 if (galeriaGrid) {
     const galeriaImagens = [
@@ -104,7 +101,6 @@ if (galeriaGrid) {
     });
 }
 
-// Gráfico
 const chartScript = document.createElement('script');
 chartScript.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js';
 chartScript.onload = () => {
@@ -133,7 +129,6 @@ chartScript.onload = () => {
 };
 document.head.appendChild(chartScript);
 
-// Scroll suave e navegação
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -179,7 +174,6 @@ window.addEventListener('load', () => {
     }
 });
 
-// Animações de entrada
 const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
