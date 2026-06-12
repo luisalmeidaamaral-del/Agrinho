@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Adiciona classe no header ao rolar
+    // Adiciona sombra no header ao rolar
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
